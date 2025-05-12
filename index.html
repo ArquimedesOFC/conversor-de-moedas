@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title"><i class="fas fa-coins"></i> Conversor de Moedas</h1>
+        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+        <div class="form-group">
+            <label for="valor-real">Valor em Reais:</label>
+            <input type="number" id="valor-real" placeholder="Ex: 100.00">
+        </div>
+        <div class="form-group">
+            <label for="moeda-origem">Moeda de origem:</label>
+            <select id="moeda-origem">
+                <option value="BRL">Real Brasileiro</option>
+                <option value="USD">Dólar Americano</option>
+                <option value="EUR">Euro</option>
+                <option value="GBP">Libra Esterlina</option>
+                <option value="JPY">Iene Japonês</option>
+            </select>
+        </div>
+        <div class="buttons">
+            
+            <button onclick="converter()"><i class="fas fa-exchange-alt"></i> Converter</button>
+            <button onclick="limpar()"><i class="fas fa-trash"></i> Limpar</button>
+        </div>
+        <div class="output">
+            <h4>Resultado da conversão:</h4>
+            <input type="text" id="valor-convertido" readonly>
+        </div>
+
+        <div class="history">
+            <h4>Histórico de Conversões</h4>
+            <ul id="historico-lista">
+                <!-- Histórico será inserido aqui -->
+            </ul>
+        </div>
+
+        <!-- Gráfico de moedas -->
+        <div class="chart-container">
+            <canvas id="currencyChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>Conversor de Moedas - Desenvolvido por Arquimedes Monteiro</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
